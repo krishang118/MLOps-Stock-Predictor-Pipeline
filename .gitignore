@@ -41,7 +41,6 @@ mlruns/
 mlflow.db
 
 # DVC
-.dvc/
 *.dvc
 
 # Logs
@@ -60,3 +59,4 @@ logs/
 # OS
 .DS_Store
 Thumbs.db !.dvc
+!.dvc
