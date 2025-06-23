@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from typing import List
 import pandas as pd
 import os
-from .utils import setup_directories
+from utils import setup_directories
 import logging
 from dotenv import load_dotenv
 load_dotenv()
