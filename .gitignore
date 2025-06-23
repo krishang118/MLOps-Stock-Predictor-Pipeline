@@ -36,5 +36,3 @@ logs/
 .DS_Store
 Thumbs.db !.dvc
 !.dvc
-models/
-/models
