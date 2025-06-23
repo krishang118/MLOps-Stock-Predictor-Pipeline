@@ -8,9 +8,9 @@ import logging
 from dotenv import load_dotenv
 load_dotenv()
 logger = logging.getLogger(__name__)
-ALPHA_VANTAGE_API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY')
+ALPHA_VANTAGE_API_KEY = os.getenv('ALPHAVANTAGE_API_KEY')
 if not ALPHA_VANTAGE_API_KEY:
-    raise ValueError("ALPHA_VANTAGE_API_KEY environment variable is required")
+    raise ValueError("ALPHAVANTAGE_API_KEY environment variable is required")
 class DataIngester:
     def __init__(self, symbols: List[str], outputsize: str = "full"):
         self.symbols = symbols
