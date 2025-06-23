@@ -37,3 +37,4 @@ logs/
 Thumbs.db !.dvc
 !.dvc
 models/
+/models

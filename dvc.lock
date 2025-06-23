@@ -1,0 +1,75 @@
+schema: '2.0'
+stages:
+  ingest_data:
+    cmd: python src/ingest_data.py
+    deps:
+    - path: src/ingest_data.py
+      hash: md5
+      md5: ae6e98a9b2f690e3aa89be838fff8853
+      size: 2507
+    - path: src/utils.py
+      hash: md5
+      md5: 447f007d916c4f77810cd0f01dc279e9
+      size: 4451
+    outs:
+    - path: data/raw/raw_stock_data.csv
+      hash: md5
+      md5: 5de81b3ccfb8072bb038a35439b61165
+      size: 5990655
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - path: data/raw/raw_stock_data.csv
+      hash: md5
+      md5: 5de81b3ccfb8072bb038a35439b61165
+      size: 5990655
+    - path: src/preprocess.py
+      hash: md5
+      md5: cba87f92d8e026da32b3463c0201d3b4
+      size: 6692
+    - path: src/utils.py
+      hash: md5
+      md5: 447f007d916c4f77810cd0f01dc279e9
+      size: 4451
+    outs:
+    - path: data/processed/processed_stock_data.csv
+      hash: md5
+      md5: f6ad6d57fc3c73d1d3a6c383d6319fc1
+      size: 22204286
+  train:
+    cmd: python src/train_model.py
+    deps:
+    - path: data/processed/processed_stock_data.csv
+      hash: md5
+      md5: f6ad6d57fc3c73d1d3a6c383d6319fc1
+      size: 22204286
+    - path: src/train_model.py
+      hash: md5
+      md5: 36b8f66110fe0afc05b3714dc5d9af4a
+      size: 10004
+    outs:
+    - path: models
+      hash: md5
+      md5: cc2c7a539fb954e5f016a639ce3f2a16.dir
+      size: 112699733
+      nfiles: 13
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/processed/processed_stock_data.csv
+      hash: md5
+      md5: f6ad6d57fc3c73d1d3a6c383d6319fc1
+      size: 22204286
+    - path: models/
+      hash: md5
+      md5: e105da9088f2d2ef175434585bd23271.dir
+      size: 112804276
+      nfiles: 16
+    - path: src/evaluate.py
+      hash: md5
+      md5: 1c2af1d4bdf27e7a586b33330e30f76b
+      size: 3618
+    - path: src/utils.py
+      hash: md5
+      md5: 447f007d916c4f77810cd0f01dc279e9
+      size: 4451
