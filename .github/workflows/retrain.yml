@@ -6,7 +6,7 @@ on:
     - cron: '0 0 * * 1' 
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   retrain:
@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_PAT }}
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -25,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+
     - name: Configure Git
       run: |
         git config --global user.name 'GitHub Actions'
@@ -33,19 +35,21 @@ jobs:
 
     - name: Run DVC pipeline
       env:
-        ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }} 
+        ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
       run: |
         echo "Running DVC pipeline with API key..."
         export PYTHONPATH=$PYTHONPATH:$(pwd)
         dvc repro
 
-    - name: Commit and push changes
+    - name: Commit and Push Updated Models
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
       run: |
-        # Check if there are changes to commit
+        git pull origin main
+        git add models/
         if [[ -n $(git status -s) ]]; then
-          git add .
-          git commit -m "Automated model retraining"
-          git push
+          git commit -m "Update"
+          git push https://krishang118:${GH_PAT}@github.com/krishang118/MLOps-Stock-Predictor-Pipeline.git
         else
-          echo "No changes to commit."
-        fi 
+          echo "No model changes to commit."
+        fi
