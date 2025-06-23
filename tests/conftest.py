@@ -1,4 +1,3 @@
-"""
 import pytest
 import pandas as pd
 import numpy as np
@@ -25,4 +24,3 @@ def preprocessor():
 @pytest.fixture
 def trainer():
     return ModelTrainer()
-""" 
