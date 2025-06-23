@@ -36,6 +36,7 @@ jobs:
         ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }} 
       run: |
         echo "Running DVC pipeline with API key..."
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
         dvc repro
 
     - name: Commit and push changes
