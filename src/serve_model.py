@@ -50,6 +50,7 @@ except Exception as e:
     logger.error(f"Error loading preprocessing objects: {e}")
     model = None
 app = FastAPI(title="Stock Market Predictor API", version="1.0.0")
+os.makedirs('logs', exist_ok=True)
 file_handler = logging.FileHandler('logs/api.log')
 file_handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
