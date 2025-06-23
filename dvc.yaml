@@ -27,4 +27,4 @@ stages:
     - data/processed/processed_stock_data.csv
     - src/train_model.py
     outs:
-    - models
+    - dvc_models
