@@ -42,14 +42,13 @@ jobs:
         dvc repro
 
     - name: Commit and Push Updated Models
-      env:
-        GH_PAT: ${{ secrets.GH_PAT }}
       run: |
         git pull origin main
         git add models/
         if [[ -n $(git status -s) ]]; then
           git commit -m "Update"
-          git push https://krishang118:${GH_PAT}@github.com/krishang118/MLOps-Stock-Predictor-Pipeline.git
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/krishang118/MLOps-Stock-Predictor-Pipeline.git
+          git push origin main
         else
           echo "No model changes to commit."
         fi
