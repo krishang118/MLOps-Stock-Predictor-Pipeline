@@ -13,6 +13,8 @@ import xgboost as xgb
 from sklearn.model_selection import RandomizedSearchCV
 import numpy as np
 import platform
+import shutil
+import os
 logger = logging.getLogger(__name__)
 def get_xgb_params():
     return {
@@ -222,11 +224,15 @@ def main():
         return
     trainer = ModelTrainer()
     results, best_model_name = trainer.train_all_models(X_train, y_train, X_test, y_test)
-    joblib.dump(preprocessor.scaler, "models/scaler.pkl")
-    joblib.dump(preprocessor.label_encoder, "models/label_encoder.pkl")
-    joblib.dump(features, "models/feature_columns.pkl")
+    os.makedirs("dvc_models", exist_ok=True)
+    joblib.dump(preprocessor.scaler, "dvc_models/scaler.pkl")
+    joblib.dump(preprocessor.label_encoder, "dvc_models/label_encoder.pkl")
+    joblib.dump(features, "dvc_models/feature_columns.pkl")
+    os.makedirs("models", exist_ok=True)
+    for fname in os.listdir("dvc_models"):
+        shutil.copy(os.path.join("dvc_models", fname), "models/")
     logger.info("Model training completed successfully")
     print("\n--- Walk-forward validation (XGBoost) ---")
     walk_forward_validate_xgboost(data, n_splits=10)
 if __name__ == "__main__":
-    main() 
+    main()
