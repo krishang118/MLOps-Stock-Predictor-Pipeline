@@ -1,7 +1,4 @@
-"""
 import pytest
-import pandas as pd
-import numpy as np
 from src.preprocess import DataPreprocessor
 from src.train_model import ModelTrainer
 from src.utils import calculate_technical_indicators
@@ -66,15 +63,3 @@ def test_api_prediction_format():
     ]
     for field in required_fields:
         assert field in sample_input
-if __name__ == "__main__":
-    pytest.main([__file__])
-"""
-
-print("Complete Stock Market Predictor MLOps Pipeline created successfully!")
-print("\nTo get started:")
-print("1. Install dependencies: pip install -r requirements.txt")
-print("2. Run data ingestion: python src/ingest_data.py")
-print("3. Preprocess data: python src/preprocess.py")
-print("4. Train models: python src/train_model.py")
-print("5. Start API server: python src/serve_model.py")
-print("6. Or run complete pipeline: dvc repro")
