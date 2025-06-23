@@ -32,8 +32,10 @@ jobs:
         git config --global user.email 'actions@github.com'
 
     - name: Run DVC pipeline
+      env:
+        ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }} 
       run: |
-        export ALPHAVANTAGE_API_KEY=${{ secrets.ALPHAVANTAGE_API_KEY }}
+        echo "Running DVC pipeline with API key..."
         dvc repro
 
     - name: Commit and push changes
