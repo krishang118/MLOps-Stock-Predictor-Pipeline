@@ -2,31 +2,33 @@ stages:
   ingest_data:
     cmd: python src/ingest_data.py
     deps:
-    - src/ingest_data.py
-    - src/utils.py
+      - src/ingest_data.py
+      - src/utils.py
     outs:
-    - data/raw/raw_stock_data.csv
+      - data/raw/raw_stock_data.csv
+    env:
+      - ALPHAVANTAGE_API_KEY
   preprocess:
     cmd: python src/preprocess.py
     deps:
-    - src/preprocess.py
-    - src/utils.py
-    - data/raw/raw_stock_data.csv
+      - src/preprocess.py
+      - src/utils.py
+      - data/raw/raw_stock_data.csv
     outs:
-    - data/processed/processed_stock_data.csv
+      - data/processed/processed_stock_data.csv
   train:
     cmd: python src/train_model.py
     deps:
-    - src/train_model.py
-    - src/preprocess.py
-    - src/utils.py
-    - data/processed/processed_stock_data.csv
+      - src/train_model.py
+      - src/preprocess.py
+      - src/utils.py
+      - data/processed/processed_stock_data.csv
     outs:
-    - models/
+      - models/
   evaluate:
     cmd: python src/evaluate.py
     deps:
-    - src/evaluate.py
-    - src/utils.py
-    - models/
-    - data/processed/processed_stock_data.csv 
+      - src/evaluate.py
+      - src/utils.py
+      - models/
+      - data/processed/processed_stock_data.csv
