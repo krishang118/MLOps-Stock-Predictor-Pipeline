@@ -6,8 +6,6 @@ stages:
       - src/utils.py
     outs:
       - data/raw/raw_stock_data.csv
-    env:
-      - ALPHAVANTAGE_API_KEY
   preprocess:
     cmd: python src/preprocess.py
     deps:
