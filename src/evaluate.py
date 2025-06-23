@@ -3,7 +3,7 @@ import seaborn as sns
 from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
 import pandas as pd
 import joblib
-from .utils import load_model
+from utils import load_model
 import logging
 from .preprocess import DataPreprocessor
 logger = logging.getLogger(__name__)
