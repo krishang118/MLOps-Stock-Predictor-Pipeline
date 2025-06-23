@@ -5,7 +5,7 @@ import pandas as pd
 import joblib
 from utils import load_model
 import logging
-from .preprocess import DataPreprocessor
+from preprocess import DataPreprocessor
 logger = logging.getLogger(__name__)
 class ModelEvaluator:
     def __init__(self, model_path: str):
