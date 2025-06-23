@@ -24,8 +24,6 @@ ENV/
 .ipynb_checkpoints
 data/raw/
 data/processed/
-models/*.pkl
-models/*.joblib
 mlruns/
 mlflow.db
 logs/
