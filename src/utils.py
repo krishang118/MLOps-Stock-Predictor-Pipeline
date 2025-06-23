@@ -13,11 +13,13 @@ def setup_directories():
         os.makedirs(dir_path, exist_ok=True)
     logger.info("Project directories created successfully")
 def save_model(model, model_name: str, model_dir: str = "models"):
+    model_dir = os.path.join(os.getcwd(), model_dir)
+    os.makedirs(model_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     model_path = os.path.join(model_dir, f"{model_name}_{timestamp}.pkl")
-    joblib.dump(model, model_path)    
+    joblib.dump(model, model_path)
     latest_path = os.path.join(model_dir, f"{model_name}_latest.pkl")
-    joblib.dump(model, latest_path)    
+    joblib.dump(model, latest_path)
     logger.info(f"Model saved to {model_path}")
     return model_path
 def load_model(model_path: str):
