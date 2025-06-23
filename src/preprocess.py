@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split, TimeSeriesSplit
 logger = logging.getLogger(__name__)
 class DataPreprocessor:
     def __init__(self):
-        self.scaler = StandardScaler()
+        self.scaler = StandardScaler() 
         self.label_encoder = LabelEncoder()        
     def load_raw_data(self, filepath: str = "data/raw/raw_stock_data.csv") -> pd.DataFrame:
         if os.path.exists(filepath):
