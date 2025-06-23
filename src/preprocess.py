@@ -6,7 +6,7 @@ import logging
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split, TimeSeriesSplit
 logger = logging.getLogger(__name__)
-class DataPreprocessor:
+class DataPreprocessor: 
     def __init__(self):
         self.scaler = StandardScaler() 
         self.label_encoder = LabelEncoder()        
