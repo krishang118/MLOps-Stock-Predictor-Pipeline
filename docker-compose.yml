@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mlflow:
+    image: python:3.9-slim
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlruns
+      - ./mlflow.db:/mlflow.db
+    command: >
+      bash -c "pip install mlflow && 
+               mlflow server --backend-store-uri sqlite:///mlflow.db 
+               --default-artifact-root ./mlruns --host 0.0.0.0"
+
+  stock-predictor:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/work/data
+      - ./src:/home/jovyan/work/src

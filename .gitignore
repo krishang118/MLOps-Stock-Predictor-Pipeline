@@ -1,4 +1,3 @@
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -19,44 +18,23 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# Virtual Environment
 venv/
 env/
 ENV/
-
-# Jupyter Notebook
 .ipynb_checkpoints
-
-# Data
 data/raw/
 data/processed/
-
-# Models
 models/*.pkl
 models/*.joblib
-
-# MLflow
 mlruns/
 mlflow.db
-
-# DVC
-*.dvc
-
-# Logs
 logs/
 *.log
-
-# Environment
 .env
-
-# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS
 .DS_Store
 Thumbs.db !.dvc
 !.dvc
