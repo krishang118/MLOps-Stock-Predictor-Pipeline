@@ -97,7 +97,7 @@ class ModelTrainer:
                 artifact_path="xgboost_tuned",
                 registered_model_name="stock-predictor-xgb"
             )
-        model_path = save_model(best_model, "xgboost_tuned")
+        model_path = save_model(best_model, "xgboost_tuned", folder="dvc_models")
         logger.info(f"xgboost_tuned training completed - Accuracy: {accuracy:.4f}")
         return best_model, {
             'accuracy': accuracy,
@@ -132,7 +132,7 @@ class ModelTrainer:
                 'auc': auc
             })
             mlflow.sklearn.log_model(model, model_name)
-            model_path = save_model(model, model_name)
+            model_path = save_model(model, model_name, folder="dvc_models")
             logger.info(f"{model_name} training completed - Accuracy: {accuracy:.4f}")
             return model, {
                 'accuracy': accuracy,
