@@ -15,6 +15,7 @@ import numpy as np
 import platform
 import shutil
 import os
+import glob
 logger = logging.getLogger(__name__)
 def get_xgb_params():
     return {
@@ -228,6 +229,8 @@ def main():
     joblib.dump(preprocessor.scaler, "dvc_models/scaler.pkl")
     joblib.dump(preprocessor.label_encoder, "dvc_models/label_encoder.pkl")
     joblib.dump(features, "dvc_models/feature_columns.pkl")
+    for old_file in glob.glob("models/*.pkl"):
+        os.remove(old_file)    
     os.makedirs("models", exist_ok=True)
     for fname in os.listdir("dvc_models"):
         shutil.copy(os.path.join("dvc_models", fname), "models/")
