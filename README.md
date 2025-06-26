@@ -75,7 +75,7 @@ MLOps-Stock-Predictor-Pipeline/
 1. Clone this repository on your local machine.
 2. Make sure you have Python (3.10+) installed and set up. 
 
-And, Install the project dependencies:
+Install the project dependencies:
 ``` bash
 pip install -r requirements.txt
 ```
