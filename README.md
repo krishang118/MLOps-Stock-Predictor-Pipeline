@@ -33,7 +33,7 @@ The model is trained and validated on a curated set of major US stocks and indic
 ```
 AAPL, GOOGL, MSFT, AMZN, TSLA, META, NFLX, NVDA, JPM, BAC, V, UNH, XOM, SPY, QQQ, DIA, IWM, IVV, VOO, VTI, ^GSPC, ^IXIC, ^DJI
 ```
-Predictions for select tickers (i.e. stock symbols) only is supported here, to ensure reliability and model validity.
+Predictions for only select tickers are supported here, to ensure reliability and model validity.
 
 ## Project Structure
 
