@@ -5,6 +5,7 @@ An end-to-end MLOps pipeline for stock market prediction using the Alpha Vantage
 Built on a modular, robust architecture, the pipeline leverages FastAPI for model serving, DVC for data and model versioning, GitHub Actions for CI/CD and automated retraining, and Docker for consistent containerization. Deployment is streamlined via Render, ensuring secure, reproducible, and transparent workflows with seamless updates.
 
 The Render Link: https://mlops-stock-predictor-pipeline.onrender.com/
+Note: The web app is hosted on a free Render instance, which may spin down due to inactivity. As a result, the initial request may take up to 50 seconds or more to respond when starting for the first time.
 
 ## Features
 
@@ -96,6 +97,10 @@ PYTHONPATH=src uvicorn src.serve_model:app --reload --port 8000
 ```
 The API will be available to run locally at: http://127.0.0.1:8000.
 
----
+## Contributing
 
-A comprehensive end-to-end MLOps pipeline for stock market prediction with automated data ingestion, multi-model training, DVC versioning, FastAPI/Docker deployment on Render, and Github Actions CI/CD with scheduled retraining.
+Contributions are welcome!
+
+## License
+
+Distributed under the MIT License. 
