@@ -31,8 +31,7 @@ The Render Link: https://mlops-stock-predictor-pipeline.onrender.com/
 
 The model is trained and validated on a curated set of major US stocks and indices:
 ```
-AAPL, GOOGL, MSFT, AMZN, TSLA, META, NFLX, NVDA, JPM, BAC, V, UNH, XOM,
-SPY, QQQ, DIA, IWM, IVV, VOO, VTI, ^GSPC, ^IXIC, ^DJI
+AAPL, GOOGL, MSFT, AMZN, TSLA, META, NFLX, NVDA, JPM, BAC, V, UNH, XOM, SPY, QQQ, DIA, IWM, IVV, VOO, VTI, ^GSPC, ^IXIC, ^DJI
 ```
 Predictions for select tickers (i.e. stock symbols) only is supported here, to ensure reliability and model validity.
 
