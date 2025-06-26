@@ -74,11 +74,13 @@ MLOps-Stock-Predictor-Pipeline/
 
 1. Clone this repository on your local machine.
 2. Make sure you have Python (3.10+) installed and set up. 
-Install the project dependencies:
+
+And, Install the project dependencies:
 ``` bash
 pip install -r requirements.txt
 ```
 3. Obtain a free API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key). 
+
 Create a `.env` file in the main local project directory, and add:
 ```
 ALPHA_VANTAGE_API_KEY=your_api_key
