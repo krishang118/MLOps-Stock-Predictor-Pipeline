@@ -25,7 +25,7 @@ The Render Web App Link: https://mlops-stock-predictor-pipeline.onrender.com/
     - Real-Time Prediction: Fetches latest market data via Alpha Vantage API.
     - Detailed Prediction: Manual input for all features.
 - CI/CD and Retraining with GitHub Actions:
-  - Ensures secure automated testing, pipeline execution, building Docker images and deployment.
+  - Ensures secure automated testing, pipeline execution, Docker image building and deployment.
   - Automated Weekly Retraining: Scheduled retraining to keep models up-to-date with the latest data.
 
 ### Supported Stock Tickers
