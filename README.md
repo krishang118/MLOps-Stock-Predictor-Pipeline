@@ -20,7 +20,7 @@ The Render Link: https://mlops-stock-predictor-pipeline.onrender.com/
 - Containerization & Deployment:
   - Encapsulates each stage in Docker containers for consistency; and is deployed and served seamlessly via FastAPI using Render.
   
-  Three Stock Movement Prediction Modes:
+  The web app features three stock movement prediction modes:
     - Quick Prediction: Demo with random sample data.
     - Real-Time Prediction: Fetches latest market data via Alpha Vantage API.
     - Detailed Prediction: Manual input for all features.
