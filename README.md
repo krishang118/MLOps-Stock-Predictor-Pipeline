@@ -88,10 +88,10 @@ ALPHA_VANTAGE_API_KEY=your_api_key
 ```
 4. Initialize DVC and run the pipeline: 
 ``` bash
-dvc init
+dvc init    # required just once
 dvc repro
 ```
-5. Start the FastAPI Server and serve the model locally:
+5. Start the FastAPI server and serve the model locally:
 ``` bash
 PYTHONPATH=src uvicorn src.serve_model:app --reload --port 8000
 ```
