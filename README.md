@@ -7,7 +7,7 @@ Built on a modular, robust architecture, the pipeline leverages FastAPI for mode
 The Render Web App Link: https://mlops-stock-predictor-pipeline.onrender.com/
 > Note: The web app is hosted on a free Render instance, which may spin down due to inactivity. As a result, the initial request may take up to 50 seconds or more to respond when starting for the first time.
 
-## Features
+## Project Flow and Features
 
 - Automated Data Ingestion & Preprocessing:
   - Fetches and processes historical stock data using the Alpha Vantage API.
