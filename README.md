@@ -86,9 +86,8 @@ Create a `.env` file in the main local project directory, and add:
 ```
 ALPHA_VANTAGE_API_KEY=your_api_key
 ```
-4. Initialize DVC and run the pipeline: 
+4. Run the DVC pipeline: 
 ``` bash
-dvc init    # required just once
 dvc repro
 ```
 5. Start the FastAPI server and serve the model locally:
