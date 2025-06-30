@@ -1,5 +1,5 @@
 # Stock Market Predictor - MLOps Pipeline
- 
+  
 An end-to-end MLOps pipeline for stock market prediction using the Alpha Vantage API, designed to implement the complete machine learning lifecycle — from automated data ingestion, preprocessing, and advanced feature engineering to model training, evaluation, versioning, deployment, and CI/CD (Continuous Integration/Continuous Deployment) support with scheduled retraining.
 
 Built on a modular, robust architecture, the pipeline leverages FastAPI for model serving, DVC for data and model versioning, GitHub Actions for CI/CD and automated retraining, and Docker for consistent containerization. Deployment is streamlined via Render, ensuring secure, reproducible, and transparent workflows with seamless updates.
