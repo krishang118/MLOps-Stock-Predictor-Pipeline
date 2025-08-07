@@ -68,7 +68,7 @@ MLOps-Stock-Predictor-Pipeline/
 - Docker
 - FastAPI 
 - Render
-- Github Actions
+- GitHub Actions
 - [Alpha Vantage API](https://www.alphavantage.co/)
 
 ## Local Usage Setup
