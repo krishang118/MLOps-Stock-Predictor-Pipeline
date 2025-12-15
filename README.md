@@ -27,6 +27,7 @@ The Render Web App Link: https://mlops-stock-predictor-pipeline.onrender.com/
 - CI/CD and Retraining with GitHub Actions:
   - Ensures secure automated testing, pipeline execution, Docker image building and deployment.
   - Automated Weekly Retraining: Scheduled retraining to keep models up-to-date with the latest data.
+  > Note: Automatic weekly retraining is currently disabled due to API expiration. Historical workflow logs remain available to review past training runs and progress.
 
 ### Supported Stock Tickers
 
